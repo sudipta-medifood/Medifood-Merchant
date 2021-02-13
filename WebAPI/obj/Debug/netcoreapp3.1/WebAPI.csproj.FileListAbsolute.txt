@@ -14,7 +14,6 @@ C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
@@ -57,3 +56,18 @@ C:\MedifoodMerchant\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAss
 C:\MedifoodMerchant\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\MedifoodMerchant\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\MedifoodMerchant\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Dtos.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Dtos.pdb
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Services.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Utilities.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Services.pdb
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Utilities.pdb
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\MedifoodMerchant\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

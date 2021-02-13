@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gK0BWAJmbTdF4LSukU0gO7Oo6ZQJ9fdSRCy3gD48bdT45cU2jHuSHPaAJHDKx/N/kWb7tf5dfNCZKeUBsUW/LQ==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

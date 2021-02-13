@@ -12,6 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Repositories;
+using Repositories.Extensions;
+using Repositories.Interface;
+using Repositories.Repository;
+using Services.Extensions;
+using Utilities;
 
 namespace WebAPI
 {
@@ -27,8 +32,11 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<DataContext>(x => x.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            RepositoryDependency.AllDependency(services, Configuration);
+            services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
+            ServiceDependency.ALLDependency(services, Configuration);
             services.AddControllers();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

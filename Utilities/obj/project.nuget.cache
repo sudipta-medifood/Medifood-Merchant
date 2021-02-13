@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4N34jfQL1Xz0U+TPk11jbvFciiWfqpI60Dtxg4FJHt71Fy2W7MVmCC9wdwhFkKBNXY+b3T2/qvHfkgixVG4n0A==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
