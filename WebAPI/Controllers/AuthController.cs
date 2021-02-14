@@ -88,6 +88,28 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDto forgotPassword)
+        {
+            ServiceResponse<string> forgotPasswordResponse = await authoRepo.ForgotPassword(forgotPassword.Email);
+            if (!forgotPasswordResponse.Success)
+            {
+                return BadRequest(forgotPasswordResponse);
+            }
+            return Ok(forgotPasswordResponse);
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPassword)
+        {
+            ServiceResponse<string> resetPasswordResponse = await authoRepo.ResetPassword(resetPassword.Token, resetPassword.Password);
+            if (!resetPasswordResponse.Success)
+            {
+                return BadRequest(resetPasswordResponse);
+            }
+            return Ok(resetPasswordResponse);
+        }
+
         public void SetTokenToCookie(string token)
         {
             var cookieOptions = new CookieOptions

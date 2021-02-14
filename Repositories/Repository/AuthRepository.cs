@@ -13,17 +13,23 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Utilities;
+using Services;
+using Services.Interface;
 
 namespace Repositories.Repository
 {
     public class AuthRepository : IAuthRepository
     {
         private readonly DataContext _context;
+        private readonly IMailService _mailService;
+        private readonly AppSettings _appSettings;
         private readonly TokenSettings _tokenSettings;
 
-        public AuthRepository(DataContext context, IOptions<TokenSettings> tokenSettings)
+        public AuthRepository(DataContext context, IOptions<TokenSettings> tokenSettings, IOptions<AppSettings> appSettings, IMailService mailService)
         {
             this._context = context;
+            this._mailService = mailService;
+            this._appSettings = appSettings.Value;
             this._tokenSettings = tokenSettings.Value;
         }
 
@@ -77,8 +83,6 @@ namespace Repositories.Repository
 
         public async Task<ServiceResponse<Tokens>> Login(string email, string password)
         {
-            MerchantPharmacy merchantPharmacy = new MerchantPharmacy();
-            MerchantRestaurant merchantRestaurant = new MerchantRestaurant();
             ServiceResponse<Tokens> loginResponse = new ServiceResponse<Tokens> { Data = new Tokens()};
             if (await EmailExists(email, "pharmacy merchant"))
             {
@@ -165,6 +169,102 @@ namespace Repositories.Repository
                 response.Message = "Login Successful";
             }
             return response;
+        }
+
+        public async Task<ServiceResponse<string>> ForgotPassword(string email)
+        {
+            ServiceResponse<string> forgotPasswordResponse = new ServiceResponse<string>();
+            if (await EmailExists(email, "pharmacy merchant"))
+            {
+                forgotPasswordResponse = await ForgotPasswordPharmacyMerchant(email);
+            }
+            else if (await EmailExists(email, "restaurant merchant"))
+            {
+                forgotPasswordResponse = await ForgotPasswordRestaurantMerchant(email);
+            }
+            else
+            {
+                forgotPasswordResponse.Success = false;
+                forgotPasswordResponse.Message = "No user found on that email !";
+            }
+            return forgotPasswordResponse;
+        }
+
+        public async Task<ServiceResponse<string>> ForgotPasswordPharmacyMerchant(string email)
+        {
+            ServiceResponse<string> response = new ServiceResponse<string>();
+            MerchantPharmacy merchantPharmacy = await _context.MerchantPharmacys.FirstOrDefaultAsync(x => x.Email == email.ToLower());
+
+            merchantPharmacy.ResetToken = RandomTokenString();
+            merchantPharmacy.ResetTokenExpires = DateTime.UtcNow.AddMinutes(15);
+
+            _context.MerchantPharmacys.Update(merchantPharmacy);
+            await _context.SaveChangesAsync();
+            SendPasswordResetEmailPharmacyMerchant(merchantPharmacy);
+
+            response.Message = "Email sent successfully. Please check your email.";
+            return response;
+        }
+
+        public async Task<ServiceResponse<string>> ForgotPasswordRestaurantMerchant(string email)
+        {
+            ServiceResponse<string> response = new ServiceResponse<string>();
+            MerchantRestaurant merchantRestaurant = await _context.MerchantRestaurants.FirstOrDefaultAsync(x => x.Email == email.ToLower());
+
+            merchantRestaurant.ResetToken = RandomTokenString();
+            merchantRestaurant.ResetTokenExpires = DateTime.UtcNow.AddMinutes(15);
+
+            _context.MerchantRestaurants.Update(merchantRestaurant);
+            await _context.SaveChangesAsync();
+            SendPasswordResetEmailRestaurantMerchant(merchantRestaurant);
+
+            response.Message = "Email sent successfully. Please check your email.";
+            return response;
+        }
+
+        public async Task<ServiceResponse<string>> ResetPassword(string token, string password)
+        {
+            ServiceResponse<string> resetPasswordResponse = new ServiceResponse<string>();
+            var pharmacyMerchant = await _context.MerchantPharmacys.SingleOrDefaultAsync(pharmacymerchant =>
+            pharmacymerchant.ResetToken == token &&
+            pharmacymerchant.ResetTokenExpires > DateTime.UtcNow);
+
+            var restaurantMerchant = await _context.MerchantRestaurants.SingleOrDefaultAsync(restaurantmerchant =>
+            restaurantmerchant.ResetToken == token &&
+            restaurantmerchant.ResetTokenExpires > DateTime.UtcNow);
+
+            if (pharmacyMerchant != null)
+            {
+                CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+                pharmacyMerchant.PasswordHash = passwordHash;
+                pharmacyMerchant.PasswordSalt = passwordSalt;
+                pharmacyMerchant.PasswordReset = DateTime.UtcNow;
+                pharmacyMerchant.ResetToken = null;
+                pharmacyMerchant.ResetTokenExpires = null;
+
+                _context.MerchantPharmacys.Update(pharmacyMerchant);
+                await _context.SaveChangesAsync();
+                resetPasswordResponse.Message = "Password reset successfully";
+            }
+            else if (restaurantMerchant != null)
+            {
+                CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+                restaurantMerchant.PasswordHash = passwordHash;
+                restaurantMerchant.PasswordSalt = passwordSalt;
+                restaurantMerchant.PasswordReset = DateTime.UtcNow;
+                restaurantMerchant.ResetToken = null;
+                restaurantMerchant.ResetTokenExpires = null;
+
+                _context.MerchantRestaurants.Update(restaurantMerchant);
+                await _context.SaveChangesAsync();
+                resetPasswordResponse.Message = "Password reset successfully";
+            }
+            else
+            {
+                resetPasswordResponse.Success = false;
+                resetPasswordResponse.Message = "Token have been expired.";
+            }
+            return resetPasswordResponse;
         }
 
         public string CreateTokenPharmacyMerchant(MerchantPharmacy merchantPharmacy)
@@ -261,6 +361,32 @@ namespace Repositories.Repository
             merchantRestaurant.RefTokenRestaurantMerchants.RemoveAll(x => 
             !x.IsActive &&
             x.Created.AddDays(_tokenSettings.RefreshTokenTTL) <= DateTime.UtcNow);
+        }
+
+        private async void SendPasswordResetEmailPharmacyMerchant(MerchantPharmacy merchantPharmacy)
+        {
+            string message;
+            var resetUrl = $"{_appSettings.AppIISExpressUrl}/api/auth/reset-password?token={merchantPharmacy.ResetToken}";
+            message = $@"<p>Please click the below link to reset your password. This link will be invalid after 15 minutes:
+                        <p><a href=""{resetUrl}"">{resetUrl}</a></p>";
+
+            await _mailService.SendEmailAsync(
+                toEmail: merchantPharmacy.Email,
+                subject: "Reset Password",
+                body: $@"<h4>Reset your password</h4>{message}");
+        }
+        
+        private async void SendPasswordResetEmailRestaurantMerchant(MerchantRestaurant merchantRestaurant)
+        {
+            string message;
+            var resetUrl = $"{_appSettings.AppIISExpressUrl}/api/auth/reset-password?token={merchantRestaurant.ResetToken}";
+            message = $@"<p>Please click the below link to reset your password. This link will be invalid after 15 minutes:
+                        <p><a href=""{resetUrl}"">{resetUrl}</a></p>";
+
+            await _mailService.SendEmailAsync(
+                toEmail: merchantRestaurant.Email,
+                subject: "Reset Password",
+                body: $@"<h4>Reset your password</h4>{message}");
         }
 
         // use password to create password hash

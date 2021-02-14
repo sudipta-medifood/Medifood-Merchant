@@ -33,10 +33,8 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             RepositoryDependency.AllDependency(services, Configuration);
-            services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
             ServiceDependency.ALLDependency(services, Configuration);
             services.AddControllers();
-            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +48,8 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -43,6 +43,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -144,6 +148,9 @@
               "C:\\MedifoodMerchant\\Models\\Models.csproj": {
                 "projectPath": "C:\\MedifoodMerchant\\Models\\Models.csproj"
               },
+              "C:\\MedifoodMerchant\\Services\\Services.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Services\\Services.csproj"
+              },
               "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj": {
                 "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj"
               }
@@ -235,9 +242,6 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj"
-              },
               "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj": {
                 "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj"
               }
@@ -253,6 +257,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"

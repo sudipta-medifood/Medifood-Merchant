@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Services.Interface;
+using Services.Service;
 using Utilities;
 
 namespace Services.Extensions
@@ -14,6 +16,9 @@ namespace Services.Extensions
         public static void ALLDependency(IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<TokenSettings>(configuration.GetSection("TokenSettings"));
+            services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
+            services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
