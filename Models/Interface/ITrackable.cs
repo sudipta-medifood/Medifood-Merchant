@@ -6,7 +6,7 @@ namespace Models.Interface
 {
     public interface ITrackable
     {
-        DateTimeOffset CreatedAt { get; set; }
-        DateTimeOffset LastUpdatedAt { get; set; }
+        DateTime CreatedAt { get; set; }
+        DateTime LastUpdatedAt { get; set; }
     }
 }

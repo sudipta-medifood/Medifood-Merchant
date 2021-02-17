@@ -16,7 +16,7 @@ namespace Models.Merchants
         public DateTime? Revoked { get; set; }
         public string ReplacedByToken { get; set; }
         public bool IsActive => Revoked == null && !IsExpired;
-        public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset LastUpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime LastUpdatedAt { get; set; }
     }
 }

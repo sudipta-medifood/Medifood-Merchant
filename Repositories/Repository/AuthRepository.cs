@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Utilities;
 using Services;
 using Services.Interface;
+using Dtos.MerchantDtos;
 
 namespace Repositories.Repository
 {
@@ -49,6 +50,8 @@ namespace Repositories.Repository
             merchantPharmacy.PasswordHash = passwordHash;
             merchantPharmacy.PasswordSalt = passwordSalt;
             merchantPharmacy.Email = merchantPharmacy.Email.ToLower();
+            merchantPharmacy.AccountStatus = 0;
+            merchantPharmacy.LoginStatus = 0;
 
             await _context.MerchantPharmacys.AddAsync(merchantPharmacy);
             await _context.SaveChangesAsync();
@@ -73,6 +76,8 @@ namespace Repositories.Repository
             merchantRestaurant.PasswordHash = passwordHash;
             merchantRestaurant.PasswordSalt = passwordSalt;
             merchantRestaurant.Email = merchantRestaurant.Email.ToLower();
+            merchantRestaurant.AccountStatus = 0;
+            merchantRestaurant.LoginStatus = 0;
 
             await _context.MerchantRestaurants.AddAsync(merchantRestaurant);
             await _context.SaveChangesAsync();
@@ -81,9 +86,10 @@ namespace Repositories.Repository
             return registerResponse;
         }
 
-        public async Task<ServiceResponse<Tokens>> Login(string email, string password)
+        // login merchant account
+        public async Task<ServiceResponse<LoginResponse>> Login(string email, string password)
         {
-            ServiceResponse<Tokens> loginResponse = new ServiceResponse<Tokens> { Data = new Tokens()};
+            ServiceResponse<LoginResponse> loginResponse = new ServiceResponse<LoginResponse> { Data = new LoginResponse()};
             if (await EmailExists(email, "pharmacy merchant"))
             {
                 loginResponse = await CreateLoginPharmacyMerchant(email, password);
@@ -114,63 +120,107 @@ namespace Repositories.Repository
             return false;
         }
 
-        public async Task<ServiceResponse<Tokens>> CreateLoginPharmacyMerchant(string email, string password)
+        // login pharmacy merchant account
+        public async Task<ServiceResponse<LoginResponse>> CreateLoginPharmacyMerchant(string email, string password)
         {
             MerchantPharmacy merchantPharmacy = await _context.MerchantPharmacys.
                     Include(merchantpharmacytoken => merchantpharmacytoken.RefTokenPharmacyMerchants).
                     FirstOrDefaultAsync(merchantpharmacy => merchantpharmacy.Email.Equals(email.ToLower()));
-            ServiceResponse<Tokens> response = new ServiceResponse<Tokens> { Data = new Tokens() };
-            if (!VerifyPasswordHash(password, merchantPharmacy.PasswordHash, merchantPharmacy.PasswordSalt))
+            ServiceResponse<LoginResponse> response = new ServiceResponse<LoginResponse> { Data = new LoginResponse() };
+            if (merchantPharmacy.AccountStatus == 0 && merchantPharmacy.LoginStatus == 0)
+            {
+                response.Success = false;
+                response.Message = "Your account is under review. Wait for confirmation email !";
+            }
+            else if (merchantPharmacy.AccountStatus == 1 && merchantPharmacy.LoginStatus == 1)
+            {
+                if (!VerifyPasswordHash(password, merchantPharmacy.PasswordHash, merchantPharmacy.PasswordSalt))
+                {
+                    response.Success = false;
+                    response.Message = "Invalid Email or Password";
+                }
+                else
+                {
+                    var jwtToken = CreateTokenPharmacyMerchant(merchantPharmacy);
+                    var refreshToken = GenerateRefreshTokenPharmacyMerchant();
+                    merchantPharmacy.RefTokenPharmacyMerchants.Add(refreshToken);
+
+                    RemoveOldRefreshTokensPharmacyMerchant(merchantPharmacy);
+                    _context.MerchantPharmacys.Update(merchantPharmacy);
+                    await _context.SaveChangesAsync();
+
+                    response.Data.Id = merchantPharmacy.Id;
+                    response.Data.JwtToken = jwtToken;
+                    response.Data.RefreshToken = refreshToken.Token;
+                    response.Data.Role = merchantPharmacy.Role;
+                    response.Data.UserType = "Pharmacy Merchant";
+                    response.Message = "Login Successful";
+                }
+            }
+            else if(merchantPharmacy.AccountStatus == 2 && merchantPharmacy.LoginStatus == 0)
             {
                 response.Success = false;
                 response.Message = "Invalid Email or Password";
             }
             else
             {
-                var jwtToken = CreateTokenPharmacyMerchant(merchantPharmacy);
-                var refreshToken = GenerateRefreshTokenPharmacyMerchant();
-                merchantPharmacy.RefTokenPharmacyMerchants.Add(refreshToken);
-
-                RemoveOldRefreshTokensPharmacyMerchant(merchantPharmacy);
-                _context.MerchantPharmacys.Update(merchantPharmacy);
-                await _context.SaveChangesAsync();
-
-                response.Data.JwtToken = jwtToken;
-                response.Data.RefreshToken = refreshToken.Token;
-                response.Message = "Login Successful";
+                response.Success = false;
+                response.Message = "Invalid Email or Password";
             }
-
             return response;
         }
 
-        public async Task<ServiceResponse<Tokens>> CreateLoginRestaurantMerchant(string email, string password)
+        // login restaurant merchant account
+        public async Task<ServiceResponse<LoginResponse>> CreateLoginRestaurantMerchant(string email, string password)
         {
             MerchantRestaurant merchantRestaurant = await _context.MerchantRestaurants.
                     Include(merchantrestauranttoken => merchantrestauranttoken.RefTokenRestaurantMerchants).
                     FirstOrDefaultAsync(merchantrestaurant => merchantrestaurant.Email.Equals(email.ToLower()));
-            ServiceResponse<Tokens> response = new ServiceResponse<Tokens> { Data = new Tokens() };
-            if (!VerifyPasswordHash(password, merchantRestaurant.PasswordHash, merchantRestaurant.PasswordSalt))
+            ServiceResponse<LoginResponse> response = new ServiceResponse<LoginResponse> { Data = new LoginResponse() };
+            if (merchantRestaurant.AccountStatus == 0 && merchantRestaurant.LoginStatus == 0)
+            {
+                response.Success = false;
+                response.Message = "Your account is under review. Wait for confirmation email !";
+            }
+            else if (merchantRestaurant.AccountStatus == 1 && merchantRestaurant.LoginStatus == 1)
+            {
+                if (!VerifyPasswordHash(password, merchantRestaurant.PasswordHash, merchantRestaurant.PasswordSalt))
+                {
+                    response.Success = false;
+                    response.Message = "Invalid Email or Password";
+                }
+                else
+                {
+                    var jwtToken = CreateTokenRestaurantMerchant(merchantRestaurant);
+                    var refreshToken = GenerateRefreshTokenRestaurantMerchant();
+                    merchantRestaurant.RefTokenRestaurantMerchants.Add(refreshToken);
+
+                    RemoveOldRefreshTokensRestaurantMerchant(merchantRestaurant);
+                    _context.MerchantRestaurants.Update(merchantRestaurant);
+                    await _context.SaveChangesAsync();
+
+                    response.Data.Id = merchantRestaurant.Id;
+                    response.Data.JwtToken = jwtToken;
+                    response.Data.RefreshToken = refreshToken.Token;
+                    response.Data.Role = merchantRestaurant.Role;
+                    response.Data.UserType = "Restaurant Merchant";
+                    response.Message = "Login Successful";
+                }
+            }
+            else if (merchantRestaurant.AccountStatus == 2 && merchantRestaurant.LoginStatus == 0)
             {
                 response.Success = false;
                 response.Message = "Invalid Email or Password";
             }
             else
             {
-                var jwtToken = CreateTokenRestaurantMerchant(merchantRestaurant);
-                var refreshToken = GenerateRefreshTokenRestaurantMerchant();
-                merchantRestaurant.RefTokenRestaurantMerchants.Add(refreshToken);
-
-                RemoveOldRefreshTokensRestaurantMerchant(merchantRestaurant);
-                _context.MerchantRestaurants.Update(merchantRestaurant);
-                await _context.SaveChangesAsync();
-
-                response.Data.JwtToken = jwtToken;
-                response.Data.RefreshToken = refreshToken.Token;
-                response.Message = "Login Successful";
+                response.Success = false;
+                response.Message = "Invalid Email or Password";
             }
             return response;
         }
 
+        // forgot password merchant account
         public async Task<ServiceResponse<string>> ForgotPassword(string email)
         {
             ServiceResponse<string> forgotPasswordResponse = new ServiceResponse<string>();
@@ -190,6 +240,7 @@ namespace Repositories.Repository
             return forgotPasswordResponse;
         }
 
+        // forgot password pharmacy merchant account
         public async Task<ServiceResponse<string>> ForgotPasswordPharmacyMerchant(string email)
         {
             ServiceResponse<string> response = new ServiceResponse<string>();
@@ -206,6 +257,7 @@ namespace Repositories.Repository
             return response;
         }
 
+        // forgot password restaurant merchant account
         public async Task<ServiceResponse<string>> ForgotPasswordRestaurantMerchant(string email)
         {
             ServiceResponse<string> response = new ServiceResponse<string>();
@@ -222,6 +274,7 @@ namespace Repositories.Repository
             return response;
         }
 
+        //reset password merchant account
         public async Task<ServiceResponse<string>> ResetPassword(string token, string password)
         {
             ServiceResponse<string> resetPasswordResponse = new ServiceResponse<string>();
@@ -267,6 +320,7 @@ namespace Repositories.Repository
             return resetPasswordResponse;
         }
 
+        // reset password pharmacy merchant account
         public string CreateTokenPharmacyMerchant(MerchantPharmacy merchantPharmacy)
         {
             List<Claim> claims = new List<Claim>()
@@ -294,6 +348,7 @@ namespace Repositories.Repository
             return tokenHandler.WriteToken(token);
         }
 
+        // reset password restaurant merchant account
         public string CreateTokenRestaurantMerchant(MerchantRestaurant merchantRestaurant)
         {
             List<Claim> claims = new List<Claim>()
@@ -321,6 +376,7 @@ namespace Repositories.Repository
             return tokenHandler.WriteToken(token);
         }
 
+        // generate refresh token pharmacy merchant account
         private RefTokenPharmacyMerchant GenerateRefreshTokenPharmacyMerchant()
         {
             return new RefTokenPharmacyMerchant
@@ -331,6 +387,7 @@ namespace Repositories.Repository
             };
         }
 
+        // generate refresh token restaurant merchant account
         private RefTokenRestaurantMerchant GenerateRefreshTokenRestaurantMerchant()
         {
             return new RefTokenRestaurantMerchant
@@ -341,6 +398,7 @@ namespace Repositories.Repository
             };
         }
 
+        // generate random token
         private string RandomTokenString()
         {
             using var rngToken = new RNGCryptoServiceProvider();
@@ -349,6 +407,7 @@ namespace Repositories.Repository
             return BitConverter.ToString(randomBytes).Replace("-", "");
         }
 
+        // remove old refresh token pharmacy merchant
         private void RemoveOldRefreshTokensPharmacyMerchant(MerchantPharmacy merchantPharmacy)
         {
             merchantPharmacy.RefTokenPharmacyMerchants.RemoveAll(x =>
@@ -356,6 +415,7 @@ namespace Repositories.Repository
                 x.Created.AddDays(_tokenSettings.RefreshTokenTTL) <= DateTime.UtcNow);
         }
 
+        // remove old refresh token restaurant merchant
         private void RemoveOldRefreshTokensRestaurantMerchant(MerchantRestaurant merchantRestaurant)
         {
             merchantRestaurant.RefTokenRestaurantMerchants.RemoveAll(x => 
@@ -363,6 +423,7 @@ namespace Repositories.Repository
             x.Created.AddDays(_tokenSettings.RefreshTokenTTL) <= DateTime.UtcNow);
         }
 
+        // send reset password email pharmacy merchant
         private async void SendPasswordResetEmailPharmacyMerchant(MerchantPharmacy merchantPharmacy)
         {
             string message;
@@ -376,6 +437,7 @@ namespace Repositories.Repository
                 body: $@"<h4>Reset your password</h4>{message}");
         }
         
+        // send reset password email restaurant merchant
         private async void SendPasswordResetEmailRestaurantMerchant(MerchantRestaurant merchantRestaurant)
         {
             string message;
@@ -399,6 +461,7 @@ namespace Repositories.Repository
             };
         }
 
+        // verify hashed password with user password
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositories;
 
 namespace Repositories.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210216043323_MerchantProfileCreated")]
+    partial class MerchantProfileCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,8 +31,8 @@ namespace Repositories.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("DrugLicenceNumber")
                         .HasColumnType("text");
@@ -44,8 +46,8 @@ namespace Repositories.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("LastUpdatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<int>("LoginStatus")
                         .HasColumnType("int");
@@ -94,8 +96,8 @@ namespace Repositories.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
@@ -106,8 +108,8 @@ namespace Repositories.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("LastUpdatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<int>("LoginStatus")
                         .HasColumnType("int");
@@ -156,11 +158,11 @@ namespace Repositories.Migrations
                     b.Property<DateTime>("ApprovedDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("BlockDate")
+                    b.Property<DateTime>("BlockDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime");
@@ -177,8 +179,8 @@ namespace Repositories.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("LastUpdatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<int>("LoginStatus")
                         .HasColumnType("int");
@@ -204,7 +206,7 @@ namespace Repositories.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("SuspendedDate")
+                    b.Property<DateTime>("SuspendedDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("TradeLicenseNumber")
@@ -227,8 +229,8 @@ namespace Repositories.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
@@ -237,8 +239,8 @@ namespace Repositories.Migrations
                     b.Property<DateTime>("Expires")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("LastUpdatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("ReplacedByToken")
                         .HasColumnType("text");
@@ -268,11 +270,11 @@ namespace Repositories.Migrations
                     b.Property<DateTime>("ApprovedDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("BlockDate")
+                    b.Property<DateTime>("BlockDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime");
@@ -286,8 +288,8 @@ namespace Repositories.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("LastUpdatedAt")
+                        .HasColumnType("timestamp");
 
                     b.Property<int>("LoginStatus")
                         .HasColumnType("int");
@@ -313,7 +315,7 @@ namespace Repositories.Migrations
                     b.Property<string>("RestaurantRatting")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("SuspendedDate")
+                    b.Property<DateTime>("SuspendedDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("TradeLicenseNumber")

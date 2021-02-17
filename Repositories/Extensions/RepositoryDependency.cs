@@ -16,6 +16,7 @@ namespace Repositories.Extensions
         {
             services.AddDbContextPool<DataContext>(x => x.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IMerchantProfileRepository, MerchantProfileRepository>();
         }
     }
 }

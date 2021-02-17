@@ -145,6 +145,9 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
+              "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj"
+              },
               "C:\\MedifoodMerchant\\Models\\Models.csproj": {
                 "projectPath": "C:\\MedifoodMerchant\\Models\\Models.csproj"
               },

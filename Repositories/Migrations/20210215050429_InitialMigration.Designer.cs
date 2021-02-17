@@ -9,8 +9,8 @@ using Repositories;
 namespace Repositories.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210209105436_MerchantMigration")]
-    partial class MerchantMigration
+    [Migration("20210215050429_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,8 +25,8 @@ namespace Repositories.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("AccountStatus")
-                        .HasColumnType("text");
+                    b.Property<int>("AccountStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .HasColumnType("text");
@@ -49,8 +49,8 @@ namespace Repositories.Migrations
                     b.Property<DateTimeOffset>("LastUpdatedAt")
                         .HasColumnType("timestamp");
 
-                    b.Property<string>("LoginStatus")
-                        .HasColumnType("text");
+                    b.Property<int>("LoginStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("NidNumber")
                         .HasColumnType("text");
@@ -90,8 +90,8 @@ namespace Repositories.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("AccountStatus")
-                        .HasColumnType("text");
+                    b.Property<int>("AccountStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .HasColumnType("text");
@@ -111,8 +111,8 @@ namespace Repositories.Migrations
                     b.Property<DateTimeOffset>("LastUpdatedAt")
                         .HasColumnType("timestamp");
 
-                    b.Property<string>("LoginStatus")
-                        .HasColumnType("text");
+                    b.Property<int>("LoginStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("NidNumber")
                         .HasColumnType("text");

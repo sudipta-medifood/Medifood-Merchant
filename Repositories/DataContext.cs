@@ -20,6 +20,8 @@ namespace Repositories
         public DbSet<MerchantPharmacy> MerchantPharmacys { get; set; }
         public DbSet<RefTokenPharmacyMerchant> RefTokenPharmacyMerchants { get; set; }
         public DbSet<RefTokenRestaurantMerchant> RefTokenRestaurantMerchants { get; set; }
+        public DbSet<PharmacyMerchantProfile> PharmacyMerchantProfiles { get; set; }
+        public DbSet<RestaurantMerchantProfile> RestaurantMerchantProfiles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +29,16 @@ namespace Repositories
 
             //configure RefreshToken entity model to implement table per hierarchy(TPH)
             modelBuilder.Entity<RefreshToken>().ToTable("RefreshTokens");
+
+            //one to one relationship
+            modelBuilder.Entity<MerchantPharmacy>()
+                .HasOne(a => a.PharmacyMerchantProfiles)
+                .WithOne(b => b.MerchantPharmacy)
+                .HasForeignKey<PharmacyMerchantProfile>(c => c.PharmacyMerchantId);
+            modelBuilder.Entity<MerchantRestaurant>()
+                .HasOne(a => a.RestaurantMerchantProfiles)
+                .WithOne(b => b.MerchantRestaurant)
+                .HasForeignKey<RestaurantMerchantProfile>(c => c.RestaurantMerchantId);
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -46,11 +58,11 @@ namespace Repositories
                     switch (entry.State)
                     {
                         case EntityState.Added:
-                            trackable.CreatedAt = DateTimeOffset.Now;
-                            trackable.LastUpdatedAt = DateTimeOffset.Now;
+                            trackable.CreatedAt = DateTime.Now;
+                            trackable.LastUpdatedAt = DateTime.Now;
                             break;
                         case EntityState.Modified:
-                            trackable.LastUpdatedAt = DateTimeOffset.Now;
+                            trackable.LastUpdatedAt = DateTime.Now;
                             break;
                         default:
                             break;

@@ -19,14 +19,15 @@ namespace Models.Merchants
         public string Role { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-        public string AccountStatus { get; set; }
-        public string LoginStatus { get; set; }
+        public int AccountStatus { get; set; }
+        public int LoginStatus { get; set; }
         public string ResetToken { get; set; }
         public DateTime? ResetTokenExpires { get; set; }
         public DateTime? PasswordReset { get; set; }
-        public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset LastUpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime LastUpdatedAt { get; set; }
         public List<RefTokenRestaurantMerchant> RefTokenRestaurantMerchants { get; set; }
+        public RestaurantMerchantProfile RestaurantMerchantProfiles { get; set; }
 
         public bool OwnsToken(string token)
         {

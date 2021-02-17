@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dtos.MerchantDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -16,12 +17,12 @@ namespace WebAPI.Controllers
 {
     public class AuthController : BaseApiController
     {
-        private readonly IAuthRepository authoRepo;
+        private readonly IAuthRepository _authRepo;
         private readonly TokenSettings _tokenSettings;
 
         public AuthController(IAuthRepository authoRepo, IOptions<TokenSettings> tokenSettings)
         {
-            this.authoRepo = authoRepo;
+            this._authRepo = authoRepo;
             this._tokenSettings = tokenSettings.Value;
         }
 
@@ -29,7 +30,7 @@ namespace WebAPI.Controllers
         [HttpPost("registerpharmacymerchant")]
         public async Task<IActionResult> RegisterPharmacyMerchant(PharmacyMerchantDto registerRequest)
         {
-            ServiceResponse<int> registerResponse = await authoRepo.RegisterPharmacyMerchant(
+            ServiceResponse<int> registerResponse = await _authRepo.RegisterPharmacyMerchant(
                 new MerchantPharmacy
                 {
                     PharmacyName = registerRequest.PharmacyName,
@@ -50,11 +51,11 @@ namespace WebAPI.Controllers
             return Ok(registerResponse);
         }
 
-        //register restaurant merchant
+        // register restaurant merchant
         [HttpPost("registerrestaurantmerchant")]
         public async Task<IActionResult> RegisterRestaurantMerchant(RestaurantMerchantDto registerRequest)
         {
-            ServiceResponse<int> registerResponse = await authoRepo.RegisterRestaurantMerchant(
+            ServiceResponse<int> registerResponse = await _authRepo.RegisterRestaurantMerchant(
                 new MerchantRestaurant
                 {
                     RestaurantName = registerRequest.RestaurantName,
@@ -74,10 +75,11 @@ namespace WebAPI.Controllers
             return Ok(registerResponse);
         }
 
+        // login merchant
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto user)
         {
-            ServiceResponse<Tokens> response = await authoRepo.Login(user.email, user.password);
+            ServiceResponse<LoginResponse> response = await _authRepo.Login(user.email, user.password);
 
             if (!response.Success)
             {
@@ -88,10 +90,11 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
+        // forgot password merchant
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordDto forgotPassword)
         {
-            ServiceResponse<string> forgotPasswordResponse = await authoRepo.ForgotPassword(forgotPassword.Email);
+            ServiceResponse<string> forgotPasswordResponse = await _authRepo.ForgotPassword(forgotPassword.Email);
             if (!forgotPasswordResponse.Success)
             {
                 return BadRequest(forgotPasswordResponse);
@@ -99,10 +102,11 @@ namespace WebAPI.Controllers
             return Ok(forgotPasswordResponse);
         }
 
+        // reset password merchant
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPassword)
         {
-            ServiceResponse<string> resetPasswordResponse = await authoRepo.ResetPassword(resetPassword.Token, resetPassword.Password);
+            ServiceResponse<string> resetPasswordResponse = await _authRepo.ResetPassword(resetPassword.Token, resetPassword.Password);
             if (!resetPasswordResponse.Success)
             {
                 return BadRequest(resetPasswordResponse);
@@ -110,6 +114,7 @@ namespace WebAPI.Controllers
             return Ok(resetPasswordResponse);
         }
 
+        // create cookie to store token on merchant login
         public void SetTokenToCookie(string token)
         {
             var cookieOptions = new CookieOptions

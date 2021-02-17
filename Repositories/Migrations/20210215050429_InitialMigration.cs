@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace Repositories.Migrations
 {
-    public partial class MerchantMigration : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,8 +25,8 @@ namespace Repositories.Migrations
                     Role = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
-                    AccountStatus = table.Column<string>(nullable: true),
-                    LoginStatus = table.Column<string>(nullable: true),
+                    AccountStatus = table.Column<int>(nullable: false),
+                    LoginStatus = table.Column<int>(nullable: false),
                     ResetToken = table.Column<string>(nullable: true),
                     ResetTokenExpires = table.Column<DateTime>(nullable: true),
                     PasswordReset = table.Column<DateTime>(nullable: true),
@@ -54,8 +54,8 @@ namespace Repositories.Migrations
                     Role = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
-                    AccountStatus = table.Column<string>(nullable: true),
-                    LoginStatus = table.Column<string>(nullable: true),
+                    AccountStatus = table.Column<int>(nullable: false),
+                    LoginStatus = table.Column<int>(nullable: false),
                     ResetToken = table.Column<string>(nullable: true),
                     ResetTokenExpires = table.Column<DateTime>(nullable: true),
                     PasswordReset = table.Column<DateTime>(nullable: true),
