@@ -13,5 +13,8 @@ namespace Repositories.Interface
         Task<PharmacyMerchantProfile> GetPharmacyMerchantProfile(int id);
         Task<ServiceResponse<PharmacyMerchantProfileDto>> CreatePharmacyMerchantProfile(PharmacyMerchantProfileDto pharmacyMerchantProfileDto);
         Task<ServiceResponse<string>> UpdatePharmacyMerchantProfile(int id, PharmacyMerchantProfile pharmacyMerchantProfile);
+        Task<RestaurantMerchantProfile> GetRestaurantMerchantProfile(int id);
+        Task<ServiceResponse<RestaurantMerchantProfileDto>> CreateRestaurantMerchantProfile(RestaurantMerchantProfileDto restaurantMerchantProfileDto);
+        Task<ServiceResponse<string>> UpdateRestaurantMerchantProfile(int id, RestaurantMerchantProfile restaurantMerchantProfile);
     }
 }

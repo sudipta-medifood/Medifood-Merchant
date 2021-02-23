@@ -1,7 +1,6 @@
 C:\MedifoodMerchant\Dtos\bin\Debug\netstandard2.0\Dtos.deps.json
 C:\MedifoodMerchant\Dtos\bin\Debug\netstandard2.0\Dtos.dll
 C:\MedifoodMerchant\Dtos\bin\Debug\netstandard2.0\Dtos.pdb
-C:\MedifoodMerchant\Dtos\obj\Debug\netstandard2.0\Dtos.csprojAssemblyReference.cache
 C:\MedifoodMerchant\Dtos\obj\Debug\netstandard2.0\Dtos.AssemblyInfoInputs.cache
 C:\MedifoodMerchant\Dtos\obj\Debug\netstandard2.0\Dtos.AssemblyInfo.cs
 C:\MedifoodMerchant\Dtos\obj\Debug\netstandard2.0\Dtos.csproj.CoreCompileInputs.cache

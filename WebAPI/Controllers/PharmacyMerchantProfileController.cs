@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
 
             if (!merchantProfileResponse.Success)
             {
-                return BadRequest();
+                return BadRequest(merchantProfileResponse);
             }
             return Ok(merchantProfileResponse);
         }
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
             {
                 return BadRequest();
             }
-            return NoContent();
+            return Ok(updateProfileResponse);
         }
     }
 }
