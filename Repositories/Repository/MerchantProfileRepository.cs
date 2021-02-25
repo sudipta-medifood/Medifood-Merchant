@@ -48,7 +48,7 @@ namespace Repositories.Repository
                     TradeLicenseNumber = pharmacyMerchantProfileDto.TradeLicenseNumber,
                     NidNumber = pharmacyMerchantProfileDto.NidNumber,
                     CreationDate = pharmacyMerchant.CreatedAt,
-                    ApprovedDate = DateTime.Now,
+                    ApprovedDate = DateTime.UtcNow,
                     LoginStatus = pharmacyMerchantProfileDto.LoginStatus,
                     PharmacyMerchantId = pharmacyMerchant.Id
                 };
@@ -148,7 +148,7 @@ namespace Repositories.Repository
                     TradeLicenseNumber = restaurantMerchantProfileDto.TradeLicenseNumber,
                     NidNumber = restaurantMerchantProfileDto.NidNumber,
                     CreationDate = restaurantMerchant.CreatedAt,
-                    ApprovedDate = DateTime.Now,
+                    ApprovedDate = DateTime.UtcNow,
                     LoginStatus = restaurantMerchantProfileDto.LoginStatus,
                     RestaurantMerchantId = restaurantMerchant.Id
                 };

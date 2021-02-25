@@ -106,20 +106,6 @@ namespace Repositories.Repository
             return loginResponse;
         }
 
-        // check whether an email exist or not
-        public async Task<bool> EmailExists(string email, string merchantUserFlag)
-        {
-            if (merchantUserFlag.Equals("pharmacy merchant"))
-            {
-                if (await _context.MerchantPharmacys.AnyAsync(merchant => merchant.Email == email.ToLower())) return true;
-            }
-            else if (merchantUserFlag.Equals("restaurant merchant"))
-            {
-                if (await _context.MerchantRestaurants.AnyAsync(merchant => merchant.Email == email.ToLower())) return true;
-            }
-            return false;
-        }
-
         // login pharmacy merchant account
         public async Task<ServiceResponse<LoginResponse>> CreateLoginPharmacyMerchant(string email, string password)
         {
@@ -476,6 +462,20 @@ namespace Repositories.Repository
                 }
                 return true;
             }
+        }
+
+        // check whether an email exist or not
+        public async Task<bool> EmailExists(string email, string merchantUserFlag)
+        {
+            if (merchantUserFlag.Equals("pharmacy merchant"))
+            {
+                if (await _context.MerchantPharmacys.AnyAsync(merchant => merchant.Email == email.ToLower())) return true;
+            }
+            else if (merchantUserFlag.Equals("restaurant merchant"))
+            {
+                if (await _context.MerchantRestaurants.AnyAsync(merchant => merchant.Email == email.ToLower())) return true;
+            }
+            return false;
         }
     }
 }

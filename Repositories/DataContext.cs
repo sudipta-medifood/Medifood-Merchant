@@ -58,11 +58,11 @@ namespace Repositories
                     switch (entry.State)
                     {
                         case EntityState.Added:
-                            trackable.CreatedAt = DateTime.Now;
-                            trackable.LastUpdatedAt = DateTime.Now;
+                            trackable.CreatedAt = DateTime.UtcNow;
+                            trackable.LastUpdatedAt = DateTime.UtcNow;
                             break;
                         case EntityState.Modified:
-                            trackable.LastUpdatedAt = DateTime.Now;
+                            trackable.LastUpdatedAt = DateTime.UtcNow;
                             break;
                         default:
                             break;
