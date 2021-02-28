@@ -56,7 +56,7 @@ namespace Repositories.Repository
             await _context.MerchantPharmacys.AddAsync(merchantPharmacy);
             await _context.SaveChangesAsync();
             registerResponse.Data = merchantPharmacy.Id;
-            registerResponse.Message = "Successfully Registered. You will be confirmed via email";
+            registerResponse.Message = "Successfully Registered. You will be confirmed via email!";
             return registerResponse;
         }
 
@@ -221,7 +221,7 @@ namespace Repositories.Repository
             else
             {
                 forgotPasswordResponse.Success = false;
-                forgotPasswordResponse.Message = "No user found on that email !";
+                forgotPasswordResponse.Message = "No user found on that email!";
             }
             return forgotPasswordResponse;
         }
@@ -239,7 +239,7 @@ namespace Repositories.Repository
             await _context.SaveChangesAsync();
             SendPasswordResetEmailPharmacyMerchant(merchantPharmacy);
 
-            response.Message = "Email sent successfully. Please check your email.";
+            response.Message = "Email sent successfully. Please check your email!";
             return response;
         }
 
@@ -283,7 +283,7 @@ namespace Repositories.Repository
 
                 _context.MerchantPharmacys.Update(pharmacyMerchant);
                 await _context.SaveChangesAsync();
-                resetPasswordResponse.Message = "Password reset successfully";
+                resetPasswordResponse.Message = "Password reset successfully!";
             }
             else if (restaurantMerchant != null)
             {
