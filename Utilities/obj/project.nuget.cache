@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kD+qyEYIDAkfWPXiYkd5cAjBlyfWrtOIeoYN0/1PGQ/3p8zKZVpl5tmOyoXFJ3JAShDO3vuGml/mw/7B1FJYUA==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

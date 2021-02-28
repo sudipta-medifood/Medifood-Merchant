@@ -1,0 +1,9 @@
+C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.deps.json
+C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.dll
+C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.pdb
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.csprojAssemblyReference.cache
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfoInputs.cache
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfo.cs
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.csproj.CoreCompileInputs.cache
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.dll
+C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.pdb
