@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\MedifoodRider\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\MedifoodRider\\Dtos\\Dtos.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Dtos\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+        "projectName": "Dtos",
+        "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Dtos\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,6 +77,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -71,6 +86,16 @@
         "projectPath": "C:\\MedifoodRider\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Models\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\MedifoodMerchant\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Models\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,6 +122,13 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+<<<<<<< HEAD
+=======
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -118,6 +150,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -126,6 +159,16 @@
         "projectPath": "C:\\MedifoodRider\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Repositories\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj",
+        "projectName": "Repositories",
+        "projectPath": "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Repositories\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -141,6 +184,7 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\MedifoodRider\\Models\\Models.csproj": {
                 "projectPath": "C:\\MedifoodRider\\Models\\Models.csproj"
               },
@@ -149,6 +193,19 @@
               },
               "C:\\MedifoodRider\\Utilities\\Utilities.csproj": {
                 "projectPath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj"
+=======
+              "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj"
+              },
+              "C:\\MedifoodMerchant\\Models\\Models.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Models\\Models.csproj"
+              },
+              "C:\\MedifoodMerchant\\Services\\Services.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Services\\Services.csproj"
+              },
+              "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj"
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
               }
             }
           }
@@ -215,6 +272,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -223,6 +281,16 @@
         "projectPath": "C:\\MedifoodRider\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Services\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\MedifoodMerchant\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Services\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -238,8 +306,13 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\MedifoodRider\\Utilities\\Utilities.csproj": {
                 "projectPath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj"
+=======
+              "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj"
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
               }
             }
           }
@@ -278,10 +351,13 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+<<<<<<< HEAD
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.0.7, )"
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
             }
           },
           "imports": [
@@ -298,6 +374,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -306,6 +383,16 @@
         "projectPath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Utilities\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+        "projectName": "Utilities",
+        "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Utilities\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -353,6 +440,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\MedifoodRider\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -361,6 +449,16 @@
         "projectPath": "C:\\MedifoodRider\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\WebAPI\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj",
+        "projectName": "WebAPI",
+        "projectPath": "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\WebAPI\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -376,6 +474,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\MedifoodRider\\Dtos\\Dtos.csproj": {
                 "projectPath": "C:\\MedifoodRider\\Dtos\\Dtos.csproj"
               },
@@ -384,6 +483,16 @@
               },
               "C:\\MedifoodRider\\Services\\Services.csproj": {
                 "projectPath": "C:\\MedifoodRider\\Services\\Services.csproj"
+=======
+              "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj"
+              },
+              "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj"
+              },
+              "C:\\MedifoodMerchant\\Services\\Services.csproj": {
+                "projectPath": "C:\\MedifoodMerchant\\Services\\Services.csproj"
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
               }
             }
           }
@@ -424,10 +533,13 @@
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
+<<<<<<< HEAD
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.0.7, )"
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
             }
           },
           "imports": [

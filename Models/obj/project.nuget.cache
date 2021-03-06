@@ -1,9 +1,17 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Wx4OlYvdUgGXfCoi2fwPO2i3GKzQuVtbXM/6K9SkBwVdXV60ogX9dOgE+1kWpjWaJRm2GODMK0ffMEIUWXE3Vg==",
   "success": true,
   "projectFilePath": "C:\\MedifoodRider\\Models\\Models.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "d41f8pWZSKl8kRroiY8ZhJJ/2+IzGnFELbC8ZxWlnc4x0XSQVtiOp2Ma6XABTVKe8uQ/PyXBsf3dneXyXiJDmA==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodMerchant\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.10\\microsoft.entityframeworkcore.abstractions.3.1.10.nupkg.sha512",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

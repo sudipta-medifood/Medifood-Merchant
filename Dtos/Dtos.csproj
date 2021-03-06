@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+<<<<<<< HEAD
+=======
+    <LangVersion>8.0</LangVersion>
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   </PropertyGroup>
 
   <ItemGroup>

@@ -11,6 +11,9 @@ namespace Models.Responses
         public string UserType { get; set; }
         public string JwtToken { get; set; }
         public string RefreshToken { get; set; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     }
 }

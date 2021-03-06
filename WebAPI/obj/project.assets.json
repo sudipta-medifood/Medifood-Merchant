@@ -376,6 +376,7 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
@@ -387,6 +388,8 @@
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
       "Microsoft.Extensions.Caching.Abstractions/3.1.10": {
         "type": "package",
         "dependencies": {
@@ -668,6 +671,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.OpenApi/1.2.3": {
         "type": "package",
         "compile": {
@@ -677,6 +681,8 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
       "Microsoft.Win32.Primitives/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -1095,6 +1101,7 @@
           "lib/netstandard1.3/SshNet.Security.Cryptography.dll": {}
         }
       },
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore/6.0.7": {
         "type": "package",
         "dependencies": {
@@ -1146,6 +1153,8 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2581,6 +2590,12 @@
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+<<<<<<< HEAD
+=======
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "3.1.10"
+        },
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "compile": {
           "bin/placeholder/Models.dll": {}
         },
@@ -2592,6 +2607,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+<<<<<<< HEAD
+=======
+          "Dtos": "1.0.0",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
           "Microsoft.EntityFrameworkCore": "3.1.10",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.10",
           "Microsoft.IdentityModel.Tokens": "6.8.0",
@@ -2617,7 +2636,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0",
           "Microsoft.EntityFrameworkCore": "3.1.10",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "5.0.0",
+<<<<<<< HEAD
           "Swashbuckle.AspNetCore": "6.0.7",
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
           "Utilities": "1.0.0"
         },
         "compile": {
@@ -3170,6 +3192,7 @@
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
       "type": "package",
@@ -3197,6 +3220,8 @@
         "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
       ]
     },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     "Microsoft.Extensions.Caching.Abstractions/3.1.10": {
       "sha512": "xdl25cxDgwVxF9ckD9vJ5AdjzRE1vTGLYj9kZf6aL317ZneUijkxd/nSuzN1gEuO74dwG/Yfr1zfs636D6YZsA==",
       "type": "package",
@@ -3603,6 +3628,7 @@
         "runtime.json"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.OpenApi/1.2.3": {
       "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "type": "package",
@@ -3620,6 +3646,8 @@
         "microsoft.openapi.nuspec"
       ]
     },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     "Microsoft.Win32.Primitives/4.0.1": {
       "sha512": "fQnBHO9DgcmkC9dYSJoBqo6sH1VJwJprUHh8F3hbcRlxiQiBUuTntdk8tUwV490OqC2kQUrinGwZyQHTieuXRA==",
       "type": "package",
@@ -4142,6 +4170,7 @@
         "sshnet.security.cryptography.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Swashbuckle.AspNetCore/6.0.7": {
       "sha512": "Txpe0oaLHrbGYajEVMLlgbnE3MMXyfqmzlf3eD/N5sqyXHN11eFkL6oq6weEoRkAq/+dvLzh5EKR5ZHTKI+bUA==",
       "type": "package",
@@ -4214,6 +4243,8 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     "System.AppContext/4.1.0": {
       "sha512": "3QjO4jNV7PdKkmQAVp9atA+usVnKRwI3Kx1nMwJ93T0LcQfx7pKAYk0nKz5wn1oP5iqlhZuy6RXOFdhr7rDwow==",
       "type": "package",
@@ -8576,8 +8607,12 @@
       "MySql.Data >= 8.0.22",
       "MySql.Data.EntityFrameworkCore >= 8.0.22",
       "Repositories >= 1.0.0",
+<<<<<<< HEAD
       "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.0.7"
+=======
+      "Services >= 1.0.0"
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     ]
   },
   "packageFolders": {
@@ -8586,11 +8621,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\MedifoodRider\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
       "projectPath": "C:\\MedifoodRider\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "C:\\MedifoodRider\\WebAPI\\obj\\",
+=======
+      "projectUniqueName": "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj",
+      "projectName": "WebAPI",
+      "projectPath": "C:\\MedifoodMerchant\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\MedifoodMerchant\\WebAPI\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8606,6 +8649,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\MedifoodRider\\Dtos\\Dtos.csproj": {
               "projectPath": "C:\\MedifoodRider\\Dtos\\Dtos.csproj"
             },
@@ -8614,6 +8658,16 @@
             },
             "C:\\MedifoodRider\\Services\\Services.csproj": {
               "projectPath": "C:\\MedifoodRider\\Services\\Services.csproj"
+=======
+            "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+              "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj"
+            },
+            "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\MedifoodMerchant\\Repositories\\Repositories.csproj"
+            },
+            "C:\\MedifoodMerchant\\Services\\Services.csproj": {
+              "projectPath": "C:\\MedifoodMerchant\\Services\\Services.csproj"
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
             }
           }
         }
@@ -8654,10 +8708,13 @@
           "MySql.Data.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.22, )"
+<<<<<<< HEAD
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.0.7, )"
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
           }
         },
         "imports": [

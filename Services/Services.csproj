@@ -11,7 +11,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+<<<<<<< HEAD
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   </ItemGroup>
 
   <ItemGroup>

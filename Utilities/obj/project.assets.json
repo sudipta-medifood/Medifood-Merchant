@@ -185,11 +185,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\MedifoodRider\\Utilities\\Utilities.csproj",
       "projectName": "Utilities",
       "projectPath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "C:\\MedifoodRider\\Utilities\\obj\\",
+=======
+      "projectUniqueName": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+      "projectName": "Utilities",
+      "projectPath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\MedifoodMerchant\\Utilities\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

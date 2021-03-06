@@ -22,9 +22,20 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\Dtos\Dtos.csproj" />
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\Utilities\Utilities.csproj" />
   </ItemGroup>
 
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
 </Project>

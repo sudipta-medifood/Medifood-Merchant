@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.deps.json
 C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.dll
 C:\MedifoodRider\Utilities\bin\Debug\netstandard2.0\Utilities.pdb
@@ -7,3 +8,14 @@ C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfo.cs
 C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.csproj.CoreCompileInputs.cache
 C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.dll
 C:\MedifoodRider\Utilities\obj\Debug\netstandard2.0\Utilities.pdb
+=======
+C:\MedifoodMerchant\Utilities\bin\Debug\netstandard2.0\Utilities.deps.json
+C:\MedifoodMerchant\Utilities\bin\Debug\netstandard2.0\Utilities.dll
+C:\MedifoodMerchant\Utilities\bin\Debug\netstandard2.0\Utilities.pdb
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.csprojAssemblyReference.cache
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfoInputs.cache
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfo.cs
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.csproj.CoreCompileInputs.cache
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.dll
+C:\MedifoodMerchant\Utilities\obj\Debug\netstandard2.0\Utilities.pdb
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1

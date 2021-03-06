@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "duLtt/vr6nrRuCIBp1Aem0Dqi98XKL4CandCWQYTtPO5PETleBmMT8FCuuPrfiJQb6iH9dT/Ylro3LEUpiH2/Q==",
   "success": true,
   "projectFilePath": "C:\\MedifoodRider\\Dtos\\Dtos.csproj",
+=======
+  "dgSpecHash": "wJzgagzh/4gmQhoxfHArEUjQXZFVaC1SUe+mG7l+Ggo5xzG+kSNuA3P/k0sHjUfsYk0BrMlQeFxznMk1syhnHA==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

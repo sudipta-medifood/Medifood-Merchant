@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Models\\Models.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\MedifoodRider\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Models\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Models\\Models.csproj": {}
+  },
+  "projects": {
+    "C:\\MedifoodMerchant\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\MedifoodMerchant\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Models\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +52,13 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+<<<<<<< HEAD
+=======
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

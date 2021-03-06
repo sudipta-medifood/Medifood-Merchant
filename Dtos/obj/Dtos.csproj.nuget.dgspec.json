@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\MedifoodRider\\Dtos\\Dtos.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\MedifoodRider\\Dtos\\Dtos.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "C:\\MedifoodRider\\Dtos\\obj\\",
+=======
+    "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {}
+  },
+  "projects": {
+    "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+        "projectName": "Dtos",
+        "projectPath": "C:\\MedifoodMerchant\\Dtos\\Dtos.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\MedifoodMerchant\\Dtos\\obj\\",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "kD+qyEYIDAkfWPXiYkd5cAjBlyfWrtOIeoYN0/1PGQ/3p8zKZVpl5tmOyoXFJ3JAShDO3vuGml/mw/7B1FJYUA==",
   "success": true,
   "projectFilePath": "C:\\MedifoodRider\\Utilities\\Utilities.csproj",
+=======
+  "dgSpecHash": "4N34jfQL1Xz0U+TPk11jbvFciiWfqpI60Dtxg4FJHt71Fy2W7MVmCC9wdwhFkKBNXY+b3T2/qvHfkgixVG4n0A==",
+  "success": true,
+  "projectFilePath": "C:\\MedifoodMerchant\\Utilities\\Utilities.csproj",
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

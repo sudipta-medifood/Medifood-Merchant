@@ -4,11 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\MedifoodRider\WebAPI\WebAPI.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
@@ -22,7 +25,10 @@
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.22" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+<<<<<<< HEAD
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+=======
+>>>>>>> 69142915af0cedae9b642d72a42af8d86afd3ec1
   </ItemGroup>
 
   <ItemGroup>
