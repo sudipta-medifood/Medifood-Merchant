@@ -10,8 +10,6 @@ C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.pdb
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
-C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
-C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.RazorTargetAssemblyInfo.cache
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
 C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\WebAPI.StaticWebAssets.xml
@@ -74,3 +72,11 @@ C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authenticat
 C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\MedifoodRider\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\MedifoodRider\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.xml

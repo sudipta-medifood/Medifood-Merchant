@@ -25,6 +25,11 @@ namespace WebAPI.Controllers
             this._tokenSettings = tokenSettings.Value;
         }
 
+        /// <summary>
+        /// Create rider account
+        /// </summary>
+        /// <returns>Returns the rider account data</returns>
+        // POST: api/auth/register
         [HttpPost("register")]
         public async Task<IActionResult> RegisterRider(RiderDto riderRegisterRequest)
         {
@@ -71,6 +76,11 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Login rider account
+        /// </summary>
+        /// <returns>Returns the jwt token and refresh token</returns>
+        // POST: api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Login(RiderLoginDto riderLoginDto)
         {
@@ -84,6 +94,11 @@ namespace WebAPI.Controllers
             return Ok(loginResponse);
         }
 
+        /// <summary>
+        /// Forgot password rider
+        /// </summary>
+        /// <returns>Send an email with forget password link</returns>
+        // POST: api/auth/forgot-password
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordDto forgotPassword)
         {
@@ -95,6 +110,11 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Reset password with new password and confirm password
+        /// </summary>
+        /// <returns></returns>
+        // POST: api/auth/reset-password
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPassword)
         {
@@ -106,7 +126,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        public void SetTokenToCookie(string token)
+        private void SetTokenToCookie(string token)
         {
             var cookieOptions = new CookieOptions
             {

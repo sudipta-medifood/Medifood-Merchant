@@ -9,12 +9,13 @@ using System.Text;
 
 namespace Repositories.Extensions
 {
-    public class RepositoryDependency
+    public static class RepositoryDependency
     {
-        public static void AllDependency(IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddRepositoryDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContextPool<DataContext>(x => x.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IAuthRepository, AuthRepository>();
+            return services;
         }
     }
 }

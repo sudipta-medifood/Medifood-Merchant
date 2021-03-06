@@ -11,14 +11,15 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Services.Extensions
 {
-    public class ServiceDependency
+    public static class ServiceDependency
     {
-        public static void AllDependency(IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddServiceDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<TokenSettings>(configuration.GetSection("TokenSettings"));
             services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
             services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, MailService>();
+            return services;
         }
     }
 }

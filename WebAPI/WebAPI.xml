@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WebAPI.Controllers.AuthController.RegisterRider(Dtos.RiderDtos.RiderDto)">
+            <summary>
+            Create rider account
+            </summary>
+            <returns>Returns the rider account data</returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Login(Dtos.RiderDtos.RiderLoginDto)">
+            <summary>
+            Login rider account
+            </summary>
+            <returns>Returns the jwt token and refresh token</returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.ForgotPassword(Dtos.RiderDtos.ForgotPasswordDto)">
+            <summary>
+            Forgot password rider
+            </summary>
+            <returns>Send an email with forget password link</returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.ResetPassword(Dtos.RiderDtos.ResetPasswordDto)">
+            <summary>
+            Reset password with new password and confirm password
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
